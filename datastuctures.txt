@@ -1,0 +1,88 @@
+public int[] insertionSort(int[] arr)
+{
+     //Iterate through each index of the array
+     for (int i=1; i<arr.length; ++i)
+     {
+          //Key value is set to the current index of the outer loop
+          int key = arr[i];
+
+          //Index to begin comparisons to key value
+          int j = i-1;
+
+          //Iterate backwards through the array
+          //Search for a value larger than the key
+          while (j>=0 && arr[j] > key)
+          {
+               //Shift values that do not fit the condition
+               //This will make room for the key once we find a place
+              	arr[j + 1] = arr[j];
+
+               //Decrement j
+               j = j - 1;
+          }
+
+          //Using the current value of j, place the key in it's new position
+          arr[j + 1] = key;
+     }
+     return arr;
+}
+
+more on insert method: https://www.geeksforgeeks.org/insertion-sort/
+
+public int binarySearch(int[]array, int num) {
+  int low = 0;
+  //low range
+  int high = array.length -1; //high range 
+  int mid; //mid range
+  while (high >= low)  
+      //while low is less than or equal to high
+  {
+    mid = (low + high) / 2; 
+      //set middle range to be (low + high) /2
+    if (array[mid] == num) { 
+        //if the array in the middle range = input number
+        return mid;
+      //return mid range
+
+    }
+    else
+      if (array[mid] > num) { 
+          //if the array in the middle range > input number
+          high = mid - 1;
+        //set the high value to be the mid value minus 1
+
+      }
+      else
+      {
+          low = mid + 1;
+        //set low value to be mid value plus one
+
+      }     
+  }
+    return -1;
+  //return -1 here because that would mean that the number is not found in the loop
+}
+
+more on binary: https://www.geeksforgeeks.org/binary-search/
+
+public int[] selectionSort(int[] array) {
+  for (int i = 0; i < array.length - 1; i++) {
+   int min = array[i];
+   int minIndex = i;
+     for (int j = i + 1; j < array.length; j++) {
+       if (min > array[j]) {
+         min = array[j];
+         minIndex = j;
+         }
+      }
+     if (minIndex >= i) {
+       array[minIndex] = array[i];
+       array[i] = min;
+     }
+    }
+  return array;
+}
+
+more on selectionSort: https://www.geeksforgeeks.org/selection-sort/
+
+https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
